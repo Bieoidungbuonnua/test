@@ -39,10 +39,10 @@ wget --no-check-certificate 'https://drive.usercontent.google.com/download?id=1I
 wget --no-check-certificate 'https://drive.usercontent.google.com/download?id=1R8uq8A5vk9BV0wBNTdm9ye9yNgTslm_X&export=download&authuser=0&confirm=t&uuid=96117d25-232b-44b0-b176-7589d45bc1d4&at=AN8xHoqgXRGDLGRxlzi6Qmx2mPXB%3A1756796918861' -O tiktok.apk
 wget --no-check-certificate 'https://drive.usercontent.google.com/download?id=1SsHO7MbkI21srSBp_buhPMsQ54TTCiMe&export=download&authuser=0&confirm=t&uuid=befda701-6f5d-4ed3-b689-457e4f438e54&at=AN8xHopUjWqN2lLMRI5xKGib0j0r%3A1756797222781' -O auto.apk
 
-# Cài APK (cần quyền adb/pm)
-pm install -r vpn.apk
-pm install -r tiktok.apk
-pm install -r auto.apk
+# Mở trình cài đặt APK (không cần root)
+am start -a android.intent.action.VIEW -d "file:///sdcard/download/vpn.apk" -t "application/vnd.android.package-archive"
+am start -a android.intent.action.VIEW -d "file:///sdcard/download/tiktok.apk" -t "application/vnd.android.package-archive"
+am start -a android.intent.action.VIEW -d "file:///sdcard/download/auto.apk" -t "application/vnd.android.package-archive"
 
 # Chạy tool
 python gl.py
